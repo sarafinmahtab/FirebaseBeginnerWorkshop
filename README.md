@@ -28,10 +28,18 @@ Besides when your app is connected, Firebase put an auto-generated file name `go
 ## Add Firebase Authentication to your app.
 
 * To use an authentication provider, you need to enable it. Go to [Firebase console](https://console.firebase.google.com/). You can see the project Firebase created to for you. Go to the project, then to the **Sign-in Method** page in the Firebase **Authentication** section to *enable Email/Password sign-in* and any other identity providers you want for your app.
-* On Android Studio, on `app/build.gradle`, add these following line on  **dependencies** section.
+* On Android Studio, on `app/build.gradle`, add these following line on **dependencies** section.
 ```
         implementation 'com.google.firebase:firebase-core:16.0.4'
         implementation 'com.google.firebase:firebase-auth:16.0.4'
+```
+
+## Add Firebase Database to your app.
+
+* To use Firebase Realtime Database, add the following line on **dependencies** section on `app/build.gradle`.
+
+```
+        implementation 'com.google.firebase:firebase-database:16.0.3'
 ```
 
 Now first of all, create 3 Activities in Android Studio. *LoginActivity*, *RegisterActivity*, *MainActivity*. Implement the design and initialize all the views.

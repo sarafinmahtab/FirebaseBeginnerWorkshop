@@ -2,22 +2,13 @@ package com.sarafinmahtab.firebasebeginner;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
 public class LoginActivity extends AppCompatActivity {
-
-    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +26,6 @@ public class LoginActivity extends AppCompatActivity {
         registerButton = findViewById(R.id.register_button);
 
 
-        firebaseAuth = FirebaseAuth.getInstance();
-
-
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,22 +33,7 @@ public class LoginActivity extends AppCompatActivity {
                 String email = emailEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
 
-                firebaseAuth.signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
 
-                                FirebaseUser user = firebaseAuth.getCurrentUser();
-
-                                if (user != null) {
-
-                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                    intent.putExtra("uid", user.getUid());
-                                    startActivity(intent);
-                                    finish();
-                                }
-                            }
-                        });
             }
         });
 
