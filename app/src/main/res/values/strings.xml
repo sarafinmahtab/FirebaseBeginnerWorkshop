@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">FirebaseBeginner</string>
+
+    <string name="register_with_email">Register with E-mail</string>
+    <string name="register">Register</string>
+
+    <string name="login_with_email">Login with E-mail</string>
+    <string name="login">Login</string>
+
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="or">Or</string>
+
+    <string name="username">User Name</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="hometown">Hometown</string>
+    <string name="college_name">College</string>
+    <string name="school_name">School</string>
+
+</resources>
